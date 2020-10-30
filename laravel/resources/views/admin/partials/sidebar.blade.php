@@ -26,8 +26,8 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/parner') }}"><i class="fa fa-angle-right"></i> Danh mục</a></li>
-                            <li><a href="{{ url('/admin/shop/product') }}"><i class="fa fa-angle-right"></i> Sản phẩm</a></li>
+                            <li><a href="{{ url('/admin/partner/delegate') }}"><i class="fa fa-angle-right"></i> Người đại diện</a></li>
+                            <li><a href="{{ url('/admin/partner/company') }}"><i class="fa fa-angle-right"></i> Công ty</a></li>
                         </ul>
                     </li>
 
@@ -38,11 +38,20 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/content/category') }}"><i class="fa fa-angle-right"></i> Danh mục</a></li>
-                            <li><a href="{{ url('/admin/content/post') }}"><i class="fa fa-angle-right"></i> Bài viết</a></li>
+                            <li><a href="{{ url('/admin/bookman') }}"><i class="fa fa-angle-right"></i> Học giả</a></li>
                         </ul>
                     </li>
 
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>Quản trị viên</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-angle-right"></i> Quản trị viên</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
             </div>
