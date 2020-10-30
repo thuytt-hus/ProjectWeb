@@ -59,17 +59,17 @@ Route::prefix('admin')->group(function () {
     Route::post('partner/company/{id}/delete', 'Admin\PartnerCompanyController@destroy');
 
 
-    /*Route::get('bookman', 'Admin\ShopCategoryController@index');
-    Route::get('bookman/create', 'Admin\ShopCategoryController@create');
-    Route::get('bookman/{id}/edit', 'Admin\ShopCategoryController@edit');
-    Route::get('bookman/{id}/delete', 'Admin\ShopCategoryController@delete');
+    Route::get('scholar', 'Admin\ScholarController@index');
+    Route::get('scholar/create', 'Admin\ScholarController@create');
+    Route::get('scholar/{id}/edit', 'Admin\ScholarController@edit');
+    Route::get('scholar/{id}/delete', 'Admin\ScholarController@delete');
 
-    Route::post('bookman', 'Admin\ShopCategoryController@store');
-    Route::post('bookman/{id}', 'Admin\ShopCategoryController@update');
-    Route::post('bookman/{id}/delete', 'Admin\ShopCategoryController@destroy');
+    Route::post('scholar', 'Admin\ScholarController@store');
+    Route::post('scholar/{id}', 'Admin\ScholarController@update');
+    Route::post('scholar/{id}/delete', 'Admin\ScholarController@destroy');
 
 
-    Route::get('users', 'Admin\AdminManagerController@index');
+    /*Route::get('users', 'Admin\AdminManagerController@index');
     Route::get('users/create', 'Admin\AdminManagerController@create');
     Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
     Route::get('users/{id}/delete', 'Admin\AdminManagerController@delete');
