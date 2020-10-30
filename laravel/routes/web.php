@@ -49,17 +49,17 @@ Route::prefix('admin')->group(function () {
     Route::post('partner/delegate/{id}', 'Admin\PartnerDelegateController@update');
     Route::post('partner/delegate/{id}/delete', 'Admin\PartnerDelegateController@destroy');
 
-    /*Route::get('partner/company', 'Admin\ShopCategoryController@index');
-    Route::get('partner/company/create', 'Admin\ShopCategoryController@create');
-    Route::get('partner/company/{id}/edit', 'Admin\ShopCategoryController@edit');
-    Route::get('partner/company/{id}/delete', 'Admin\ShopCategoryController@delete');
+    Route::get('partner/company', 'Admin\PartnerCompanyController@index');
+    Route::get('partner/company/create', 'Admin\PartnerCompanyController@create');
+    Route::get('partner/company/{id}/edit', 'Admin\PartnerCompanyController@edit');
+    Route::get('partner/company/{id}/delete', 'Admin\PartnerCompanyController@delete');
 
-    Route::post('partner/company', 'Admin\ShopCategoryController@store');
-    Route::post('partner/company/{id}', 'Admin\ShopCategoryController@update');
-    Route::post('partner/company/{id}/delete', 'Admin\ShopCategoryController@destroy');
+    Route::post('partner/company', 'Admin\PartnerCompanyController@store');
+    Route::post('partner/company/{id}', 'Admin\PartnerCompanyController@update');
+    Route::post('partner/company/{id}/delete', 'Admin\PartnerCompanyController@destroy');
 
 
-    Route::get('bookman', 'Admin\ShopCategoryController@index');
+    /*Route::get('bookman', 'Admin\ShopCategoryController@index');
     Route::get('bookman/create', 'Admin\ShopCategoryController@create');
     Route::get('bookman/{id}/edit', 'Admin\ShopCategoryController@edit');
     Route::get('bookman/{id}/delete', 'Admin\ShopCategoryController@delete');

@@ -7,7 +7,8 @@
 
     <div class="row">
         <div class="form-three widget-shadow">
-            <form name="category" action="{{ url('admin/partner/delegate/'.$cat->id.'/delete') }}" method="post" class="form-horizontal">
+            <form name="category" action="{{ url('admin/partner/delegate/'.$cat->id.'/delete') }}" method="post"
+                  class="form-horizontal">
                 @csrf
 
                 <div class="col-sm-offset-2">
