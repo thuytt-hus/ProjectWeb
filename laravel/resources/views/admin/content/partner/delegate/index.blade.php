@@ -27,10 +27,12 @@
                 @foreach($cats as $cat)
                     <tr>
                         <th scope="row">{{ $cat->id }}</th>
+                        <td>{{ $cat->name }}</td>
                         <td>{{ $cat->position }}</td>
                         <td>{{ $cat->department }}</td>
                         <td>{{ $cat->email }}</td>
                         <td>{{ $cat->company_name }}</td>
+
                         <td>
                             <a href="{{ url('admin/partner/delegate/'.$cat->id.'/edit') }}" class="btn btn-warning">Sửa</a>
                             <a href="{{ url('admin/partner/delegate/'.$cat->id.'/delete ') }}" class="btn btn-danger">Xóa</a>
@@ -42,5 +44,14 @@
             {{ $cats->links() }}
         </div>
     </div>
+
+    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/ProjectWeb/laravel/public/laravel-filemanager'});
+
+        });
+
+    </script>
 
 @endsection

@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="txtarea1" class="col-sm-2 control-label ">Công ty</label>
+                    <label for="focusedinput" class="col-sm-2 control-label ">Công ty</label>
                     <div class="col-sm-8">
                         <input type="text" name="company_name"
                                class="form-control1" id="focusedinput" placeholder="Default Input">
@@ -73,13 +73,6 @@
         </div>
     </div>
 
-    {{--<script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.lfm-btn').filemanager('image', {'prefix': 'http://localhost/lar.tuto/authen/public/laravel-filemanager'});
 
-        });
-
-    </script>--}}
 
 @endsection

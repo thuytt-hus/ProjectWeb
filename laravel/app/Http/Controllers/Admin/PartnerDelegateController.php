@@ -51,6 +51,7 @@ class PartnerDelegateController extends Controller
         $item = new PartnerDelegateModel();
 
         $item->name = $input['name'];
+        $item->position = $input['position'];
         $item->department = $input['department'];
         $item->email = $input['email'];
         $item->company_name = $input['company_name'];
@@ -58,7 +59,7 @@ class PartnerDelegateController extends Controller
 
         $item->save();
 
-        return redirect('/admin/content/partner');
+        return redirect('/admin/partner/delegate');
     }
 
     public function edit($id) {
@@ -89,6 +90,7 @@ class PartnerDelegateController extends Controller
         $item = PartnerDelegateModel::find($id);
 
         $item->name = $input['name'];
+        $item->position = $input['position'];
         $item->department = $input['department'];
         $item->email = $input['email'];
         $item->company_name = $input['company_name'];
@@ -96,7 +98,7 @@ class PartnerDelegateController extends Controller
 
         $item->save();
 
-        return redirect('/admin/content/partner');
+        return redirect('/admin/partner/delegate');
     }
 
     public function delete($id) {
@@ -116,7 +118,7 @@ class PartnerDelegateController extends Controller
 
         $item->delete();
 
-        return redirect('/admin/content/partner');
+        return redirect('/admin/partner/delegate');
     }
 
 }

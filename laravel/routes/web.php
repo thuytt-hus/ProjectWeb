@@ -49,7 +49,7 @@ Route::prefix('admin')->group(function () {
     Route::post('partner/delegate/{id}', 'Admin\PartnerDelegateController@update');
     Route::post('partner/delegate/{id}/delete', 'Admin\PartnerDelegateController@destroy');
 
-    Route::get('partner/company', 'Admin\ShopCategoryController@index');
+    /*Route::get('partner/company', 'Admin\ShopCategoryController@index');
     Route::get('partner/company/create', 'Admin\ShopCategoryController@create');
     Route::get('partner/company/{id}/edit', 'Admin\ShopCategoryController@edit');
     Route::get('partner/company/{id}/delete', 'Admin\ShopCategoryController@delete');
@@ -76,5 +76,5 @@ Route::prefix('admin')->group(function () {
 
     Route::post('users', 'Admin\AdminManagerController@store');
     Route::post('users/{id}', 'Admin\AdminManagerController@update');
-    Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');
+    Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');*/
 });
