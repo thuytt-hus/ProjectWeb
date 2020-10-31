@@ -70,11 +70,11 @@ Route::prefix('admin')->group(function () {
 
 
     Route::get('users', 'Admin\AdminManagerController@index');
-    /*Route::get('users/create', 'Admin\AdminManagerController@create');
+    Route::get('users/create', 'Admin\AdminManagerController@create');
     Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
     Route::get('users/{id}/delete', 'Admin\AdminManagerController@delete');
 
     Route::post('users', 'Admin\AdminManagerController@store');
     Route::post('users/{id}', 'Admin\AdminManagerController@update');
-    Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');*/
+    Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');
 });
