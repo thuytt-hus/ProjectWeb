@@ -29,9 +29,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
 
-    Route::get('register', 'AdminController@create')->name('admin.register');
+    Route::get('register', 'Auth\Admin\RegisterController@create')->name('admin.register');
 
-    Route::post('register', 'AdminController@store')->name('admin.register.store');
+    Route::post('register', 'Auth\Admin\RegisterController@store')->name('admin.register.store');
 
     Route::get('login', 'Auth\Admin\LoginController@login')->name('admin.auth.login');
 
@@ -69,8 +69,8 @@ Route::prefix('admin')->group(function () {
     Route::post('scholar/{id}/delete', 'Admin\ScholarController@destroy');
 
 
-    /*Route::get('users', 'Admin\AdminManagerController@index');
-    Route::get('users/create', 'Admin\AdminManagerController@create');
+    Route::get('users', 'Admin\AdminManagerController@index');
+    /*Route::get('users/create', 'Admin\AdminManagerController@create');
     Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
     Route::get('users/{id}/delete', 'Admin\AdminManagerController@delete');
 
