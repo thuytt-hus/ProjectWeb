@@ -1,11 +1,11 @@
 @extends('admin.layouts.glance')
 @section('title')
-    Quản trị công ty tuyển dụng
+    Quản trị nhà tuyển dụng
 @endsection
 @section('content')
-    <h1> Quản trị công ty tuyển dụng</h1>
+    <h1> Quản trị nhà tuyển dụng</h1>
     <div style="margin: 20px 0">
-        <a href="{{ url('admin/partner/company/create') }}" class="btn btn-success">Thêm công ty tuyển dụng</a>
+        <a href="{{ url('admin/partner/create') }}" class="btn btn-success">Thêm nhà tuyển dụng</a>
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">
@@ -14,8 +14,15 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>Đơn vị giới thiệu</th>
+                    <th>Tên</th>
+                    <th>Họ đệm</th>
+                    <th>Chức vụ</th>
+                    <th>Lĩnh vực công tác</th>
                     <th>Tên công ty</th>
-                    <th>Website</th>
+                    <th>Quốc gia</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -24,12 +31,19 @@
                 @foreach($cats as $cat)
                     <tr>
                         <th scope="row">{{ $cat->id }}</th>
+                        <td>{{ $cat->referralunit }}</td>
+                        <td>{{ $cat->lastname }}</td>
+                        <td>{{ $cat->firstname }}</td>
+                        <td>{{ $cat->position }}</td>
+                        <td>{{ $cat->department }}</td>
                         <td>{{ $cat->company_name }}</td>
-                        <td>{{ $cat->website }}</td>
+                        <td>{{ $cat->country }}</td>
+                        <td>{{ $cat->email }}</td>
+                        <td>{{ $cat->phone }}</td>
 
                         <td>
-                            <a href="{{ url('admin/partner/company/'.$cat->id.'/edit') }}" class="btn btn-warning">Sửa</a>
-                            <a href="{{ url('admin/partner/company/'.$cat->id.'/delete ') }}" class="btn btn-danger">Xóa</a>
+                            <a href="{{ url('admin/partner/'.$cat->id.'/edit') }}" class="btn btn-warning">Sửa</a>
+                            <a href="{{ url('admin/partner/'.$cat->id.'/delete ') }}" class="btn btn-danger">Xóa</a>
                         </td>
                     </tr>
                 @endforeach

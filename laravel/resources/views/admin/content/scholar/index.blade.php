@@ -14,13 +14,15 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Họ và tên</th>
-                    <th>Trường</th>
-                    <th>Khóa</th>
-                    <th>Ngành</th>
-                    <th>Điểm tích lũy</th>
-                    <th>Năm sinh</th>
-                    <th>Quê quán</th>
+                    <th>Đơn vị giới thiệu</th>
+                    <th>Tên</th>
+                    <th>Họ đệm</th>
+                    <th>Chức vụ</th>
+                    <th>Khoa</th>
+                    <th>Đơn vị giáo dục</th>
+                    <th>Quốc gia</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -29,13 +31,15 @@
                 @foreach($cats as $cat)
                     <tr>
                         <th scope="row">{{ $cat->id }}</th>
-                        <td>{{ $cat->name }}</td>
+                        <td>{{ $cat->referralunit }}</td>
+                        <td>{{ $cat->lastname }}</td>
+                        <td>{{ $cat->firstname }}</td>
+                        <td>{{ $cat->position }}</td>
+                        <td>{{ $cat->faculty }}</td>
                         <td>{{ $cat->college }}</td>
-                        <td>{{ $cat->schoolyear }}</td>
-                        <td>{{ $cat->majors }}</td>
-                        <td>{{ $cat->score }}</td>
-                        <td>{{ $cat->birth }}</td>
-                        <td>{{ $cat->hometown }}</td>
+                        <td>{{ $cat->country }}</td>
+                        <td>{{ $cat->email }}</td>
+                        <td>{{ $cat->phone }}</td>
                         <td>
                             <a href="{{ url('admin/scholar/'.$cat->id.'/edit') }}" class="btn btn-warning">Sửa</a>
                             <a href="{{ url('admin/scholar/'.$cat->id.'/delete ') }}" class="btn btn-danger">Xóa</a>

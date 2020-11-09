@@ -38,25 +38,29 @@ class ScholarController extends Controller
     public function store(Request $request) {
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'referralunit' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'position' => 'required',
+            'faculty' => 'required',
             'college' => 'required',
-            'schoolyear' => 'required',
-            'majors' => 'required',
-            'score' => 'required',
-            'birth' => 'required',
-            'hometown' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
 
         $input = $request->all();
         $item = new ScholarModel();
 
-        $item->name = $input['name'];
+        $item->referralunit = $input['referralunit'];
+        $item->firstname = $input['firstname'];
+        $item->lastname = $input['lastname'];
+        $item->position = $input['position'];
+        $item->faculty = $input['faculty'];
         $item->college = $input['college'];
-        $item->schoolyear = $input['schoolyear'];
-        $item->majors = $input['majors'];
-        $item->score = $input['score'];
-        $item->birth = $input['birth'];
-        $item->hometown = $input['hometown'];
+        $item->country = $input['country'];
+        $item->email = $input['email'];
+        $item->phone = $input['phone'];
 
         $item->save();
 
@@ -78,26 +82,30 @@ class ScholarController extends Controller
     public function update(Request $request, $id) {
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'referralunit' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'position' => 'required',
+            'faculty' => 'required',
             'college' => 'required',
-            'schoolyear' => 'required',
-            'majors' => 'required',
-            'score' => 'required',
-            'birth' => 'required',
-            'hometown' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
 
         $input = $request->all();
 
         $item = ScholarModel::find($id);
 
-        $item->name = $input['name'];
+        $item->referralunit = $input['referralunit'];
+        $item->firstname = $input['firstname'];
+        $item->lastname = $input['lastname'];
+        $item->position = $input['position'];
+        $item->faculty = $input['faculty'];
         $item->college = $input['college'];
-        $item->schoolyear = $input['schoolyear'];
-        $item->majors = $input['majors'];
-        $item->score = $input['score'];
-        $item->birth = $input['birth'];
-        $item->hometown = $input['hometown'];
+        $item->country = $input['country'];
+        $item->email = $input['email'];
+        $item->phone = $input['phone'];
 
         $item->save();
 

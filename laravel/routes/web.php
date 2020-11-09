@@ -40,23 +40,14 @@ Route::prefix('admin')->group(function () {
     Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
 
-    Route::get('partner/delegate', 'Admin\PartnerDelegateController@index');
-    Route::get('partner/delegate/create', 'Admin\PartnerDelegateController@create');
-    Route::get('partner/delegate/{id}/edit', 'Admin\PartnerDelegateController@edit');
-    Route::get('partner/delegate/{id}/delete', 'Admin\PartnerDelegateController@delete');
+    Route::get('partner/', 'Admin\PartnerController@index');
+    Route::get('partner/create', 'Admin\PartnerController@create');
+    Route::get('partner/{id}/edit', 'Admin\PartnerController@edit');
+    Route::get('partner/{id}/delete', 'Admin\PartnerController@delete');
 
-    Route::post('partner/delegate', 'Admin\PartnerDelegateController@store');
-    Route::post('partner/delegate/{id}', 'Admin\PartnerDelegateController@update');
-    Route::post('partner/delegate/{id}/delete', 'Admin\PartnerDelegateController@destroy');
-
-    Route::get('partner/company', 'Admin\PartnerCompanyController@index');
-    Route::get('partner/company/create', 'Admin\PartnerCompanyController@create');
-    Route::get('partner/company/{id}/edit', 'Admin\PartnerCompanyController@edit');
-    Route::get('partner/company/{id}/delete', 'Admin\PartnerCompanyController@delete');
-
-    Route::post('partner/company', 'Admin\PartnerCompanyController@store');
-    Route::post('partner/company/{id}', 'Admin\PartnerCompanyController@update');
-    Route::post('partner/company/{id}/delete', 'Admin\PartnerCompanyController@destroy');
+    Route::post('partner', 'Admin\PartnerController@store');
+    Route::post('partner/{id}', 'Admin\PartnerController@update');
+    Route::post('partner/{id}/delete', 'Admin\PartnerController@destroy');
 
 
     Route::get('scholar', 'Admin\ScholarController@index');

@@ -1,9 +1,9 @@
 @extends('admin.layouts.glance')
 @section('title')
-    ửa thông tin học giả
+    Sửa thông tin nhà tuyển dụng
 @endsection
 @section('content')
-    <h1> Sửa thông tin học giả {{ $cat->id . ' : ' .$cat->name }}</h1>
+    <h1> Sửa thông tin nhà tuyển dụng {{ $cat->id . ' : ' .$cat->name }}</h1>
 
     <div class="row">
         <div class="form-three widget-shadow">
@@ -18,8 +18,9 @@
                 </div>
             @endif
 
-            <form name="delegate" action="{{ url('admin/scholar/'.$cat->id) }}" method="post" class="form-horizontal">
+            <form name="category" action="{{ url('admin/partner/'.$cat->id) }}" method="post" class="form-horizontal">
                 @csrf
+
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Đơn vị giới thiệu</label>
                     <div class="col-sm-8">
@@ -56,18 +57,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Khoa</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Lĩnh vực công tác</label>
                     <div class="col-sm-8">
-                        <input type="text" name="faculty" class="form-control1"
-                               id="focusedinput" value="{{ $cat->faculty }}" placeholder="Default Input">
+                        <input type="text" name="department" class="form-control1"
+                               id="focusedinput" value="{{ $cat->department }}" placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label ">Đơn vị giáo dục</label>
+                    <label for="focusedinput" class="col-sm-2 control-label ">Tên công ty</label>
                     <div class="col-sm-8">
-                        <input type="text" name="college"
-                               class="form-control1" id="focusedinput" value="{{ $cat->college }}"
+                        <input type="text" name="company_name"
+                               class="form-control1" id="focusedinput" value="{{ $cat->company_name }}"
                                placeholder="Default Input">
                     </div>
                 </div>
@@ -99,6 +100,7 @@
                     </div>
                 </div>
 
+
                 <div class="col-sm-offset-2">
                     <button type="submit" class="btn btn-success">Submit</button>
                 </div>
@@ -106,6 +108,14 @@
         </div>
     </div>
 
+    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lfm-btn').filemanager('image', {'prefix': 'http://localhost/ProjectWeb/laravel/public/laravel-filemanager'});
+
+        });
+
+    </script>
 
 
 @endsection

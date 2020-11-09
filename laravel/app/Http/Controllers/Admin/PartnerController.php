@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\PartnerDelegateModel;
+use App\Model\Admin\PartnerModel;
 use Illuminate\Support\Facades\DB;
 
-class PartnerDelegateController extends Controller
+class PartnerController extends Controller
 {
     public function __construct()
     {
@@ -16,7 +16,7 @@ class PartnerDelegateController extends Controller
 
     public function index() {
 
-        $items = DB::table('partner_delegate')->paginate(10);
+        $items = DB::table('partner')->paginate(10);
 
         /**
          * Đây là biến truyền từ controller xuống view
@@ -24,7 +24,7 @@ class PartnerDelegateController extends Controller
         $data = array();
         $data['cats'] = $items;
 
-        return view('admin.content.partner.delegate.index', $data);
+        return view('admin.content.partner.index', $data);
     }
 
     public function create() {
@@ -33,33 +33,39 @@ class PartnerDelegateController extends Controller
          */
         $data = array();
 
-        return view('admin.content.partner.delegate.submit', $data);
+        return view('admin.content.partner.submit', $data);
     }
 
     public function store(Request $request) {
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'referralunit' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'position' => 'required',
             'department' => 'required',
-            'email' => 'required',
             'company_name' => 'required',
-            'desc' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
 
         $input = $request->all();
-        $item = new PartnerDelegateModel();
+        $item = new PartnerModel();
 
-        $item->name = $input['name'];
+        $item->referralunit = $input['referralunit'];
+        $item->firstname = $input['firstname'];
+        $item->lastname = $input['lastname'];
         $item->position = $input['position'];
         $item->department = $input['department'];
-        $item->email = $input['email'];
         $item->company_name = $input['company_name'];
-        $item->desc = $input['desc'];
+        $item->country = $input['country'];
+        $item->email = $input['email'];
+        $item->phone = $input['phone'];
 
         $item->save();
 
-        return redirect('/admin/partner/delegate');
+        return redirect('/admin/partner');
     }
 
     public function edit($id) {
@@ -68,37 +74,43 @@ class PartnerDelegateController extends Controller
          */
         $data = array();
 
-        $item = PartnerDelegateModel::find($id);
+        $item = PartnerModel::find($id);
         $data['cat'] = $item;
 
-        return view('admin.content.partner.delegate.edit', $data);
+        return view('admin.content.partner.edit', $data);
     }
 
     public function update(Request $request, $id) {
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'referralunit' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'position' => 'required',
             'department' => 'required',
-            'email' => 'required',
             'company_name' => 'required',
-            'desc' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
 
         $input = $request->all();
 
-        $item = PartnerDelegateModel::find($id);
+        $item = PartnerModel::find($id);
 
-        $item->name = $input['name'];
+        $item->referralunit = $input['referralunit'];
+        $item->firstname = $input['firstname'];
+        $item->lastname = $input['lastname'];
         $item->position = $input['position'];
         $item->department = $input['department'];
-        $item->email = $input['email'];
         $item->company_name = $input['company_name'];
-        $item->desc = $input['desc'];
+        $item->country = $input['country'];
+        $item->email = $input['email'];
+        $item->phone = $input['phone'];
 
         $item->save();
 
-        return redirect('/admin/partner/delegate');
+        return redirect('/admin/partner');
     }
 
     public function delete($id) {
@@ -107,18 +119,18 @@ class PartnerDelegateController extends Controller
          */
         $data = array();
 
-        $item = PartnerDelegateModel::find($id);
+        $item = PartnerModel::find($id);
         $data['cat'] = $item;
 
-        return view('admin.content.partner.delegate.delete', $data);
+        return view('admin.content.partner.delete', $data);
     }
 
     public function destroy($id) {
-        $item = PartnerDelegateModel::find($id);
+        $item = PartnerModel::find($id);
 
         $item->delete();
 
-        return redirect('/admin/partner/delegate');
+        return redirect('/admin/partner');
     }
 
 }

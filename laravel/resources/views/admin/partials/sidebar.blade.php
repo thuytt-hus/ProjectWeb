@@ -26,8 +26,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/admin/partner/delegate') }}"><i class="fa fa-angle-right"></i> Người đại diện</a></li>
-                            <li><a href="{{ url('/admin/partner/company') }}"><i class="fa fa-angle-right"></i> Công ty</a></li>
+                            <li><a href="{{ url('/admin/partner') }}"><i class="fa fa-angle-right"></i> Nhà tuyển dụng</a></li>
                         </ul>
                     </li>
 

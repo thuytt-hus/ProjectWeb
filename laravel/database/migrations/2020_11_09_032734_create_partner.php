@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePartnerDelegate extends Migration
+class CreatePartner extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreatePartnerDelegate extends Migration
      */
     public function up()
     {
-        Schema::create('partner_delegate', function (Blueprint $table) {
+        Schema::create('partner', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('referralunit');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('position');
             $table->string('department');
-            $table->string('email');
             $table->string('company_name');
-            $table->string('desc');
+            $table->string('country');
+            $table->string('email');
+            $table->string("phone");
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ class CreatePartnerDelegate extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partner_delegate');
+        Schema::dropIfExists('partner');
     }
 }

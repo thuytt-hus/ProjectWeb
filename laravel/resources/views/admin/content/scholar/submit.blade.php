@@ -21,57 +21,74 @@
             <form name="delegate" action="{{ url('admin/scholar') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Họ và tên</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn vị giới thiệu</label>
                     <div class="col-sm-8">
-                        <input type="text" name="name" class="form-control1" id="focusedinput"
-                               placeholder="Default Input">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Trường</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="college" class="form-control1" id="focusedinput"
+                        <input type="text" name="referralunit" class="form-control1" id="focusedinput"
                                placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Khóa</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Tên</label>
                     <div class="col-sm-8">
-                        <input type="text" name="schoolyear" class="form-control1"
+                        <input type="text" name="lastname" class="form-control1" id="focusedinput"
+                               placeholder="Default Input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Họ đệm</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="firstname" class="form-control1" id="focusedinput"
+                               placeholder="Default Input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Chức vụ</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="position" class="form-control1" id="focusedinput"
+                               placeholder="Default Input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Khoa</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="faculty" class="form-control1"
                                id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label ">Ngành</label>
+                    <label for="focusedinput" class="col-sm-2 control-label ">Đơn vị giáo dục</label>
                     <div class="col-sm-8">
-                        <input type="text" name="majors"
+                        <input type="text" name="college"
                                class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label ">Điểm tích lũy</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Quốc gia</label>
                     <div class="col-sm-8">
-                        <input type="text" name="score"
-                               class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <input type="text" name="country" class="form-control1" id="focusedinput"
+                               placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label ">Năm sinh</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-8">
-                        <input type="text" name="birth"
-                               class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <input type="email" name="email" class="form-control1"
+                               id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
 
+
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label ">Quê quán</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Điện thoại</label>
                     <div class="col-sm-8">
-                        <input type="text" name="hometown"
-                               class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <input type="text" name="phone" class="form-control1" id="focusedinput"
+                               placeholder="Default Input">
                     </div>
                 </div>
 

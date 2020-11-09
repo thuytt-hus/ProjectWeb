@@ -15,13 +15,15 @@ class CreateScholar extends Migration
     {
         Schema::create('scholar', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('referralunit');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('position');
+            $table->string('faculty');
             $table->string('college');
-            $table->string('schoolyear');
-            $table->string('majors');
-            $table->float('score');
-            $table->date('birth');
-            $table->string('hometown');
+            $table->string('country');
+            $table->string('email');
+            $table->string('phone');
             $table->timestamps();
         });
     }

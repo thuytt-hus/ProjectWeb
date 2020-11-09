@@ -4,8 +4,8 @@ namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PartnerDelegateModel extends Model
+class PartnerModel extends Model
 {
-    public $table = 'partner_delegate';
+    public $table = 'partner';
 
 }
