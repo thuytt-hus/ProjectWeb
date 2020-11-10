@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Imports\ScholarImport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\ScholarModel;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+
 class ScholarController extends Controller
 {
     public function __construct()
@@ -129,6 +132,20 @@ class ScholarController extends Controller
 
         $item->delete();
 
+        return redirect('/admin/scholar');
+    }
+
+    public function upload(){
+        return view('admin.content.scholar.upload');
+    }
+
+    public function import(Request $request)
+    {
+        $validatedData = $request->validate([
+            'select_file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+
+        $import = Excel::import(new ScholarImport(), request()->file('select_file'));
         return redirect('/admin/scholar');
     }
 }

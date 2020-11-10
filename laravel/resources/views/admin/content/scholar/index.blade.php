@@ -6,6 +6,7 @@
     <h1> Quản trị học giả</h1>
     <div style="margin: 20px 0">
         <a href="{{ url('admin/scholar/create') }}" class="btn btn-success">Thêm học giả</a>
+        <a href="{{ url('admin/scholar/upload') }}" class="btn btn-success">Upload file excel</a>
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">

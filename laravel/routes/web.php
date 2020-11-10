@@ -54,7 +54,9 @@ Route::prefix('admin')->group(function () {
     Route::get('scholar/create', 'Admin\ScholarController@create');
     Route::get('scholar/{id}/edit', 'Admin\ScholarController@edit');
     Route::get('scholar/{id}/delete', 'Admin\ScholarController@delete');
+    Route::get('scholar/upload', 'Admin\ScholarController@upload');
 
+    Route::post('scholar/import', 'Admin\ScholarController@import');
     Route::post('scholar', 'Admin\ScholarController@store');
     Route::post('scholar/{id}', 'Admin\ScholarController@update');
     Route::post('scholar/{id}/delete', 'Admin\ScholarController@destroy');
