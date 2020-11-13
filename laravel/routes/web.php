@@ -49,12 +49,12 @@ Route::prefix('admin')->group(function () {
     Route::post('partner/{id}', 'Admin\PartnerController@update');
     Route::post('partner/{id}/delete', 'Admin\PartnerController@destroy');
 
-
     Route::get('scholar', 'Admin\ScholarController@index');
     Route::get('scholar/create', 'Admin\ScholarController@create');
     Route::get('scholar/{id}/edit', 'Admin\ScholarController@edit');
     Route::get('scholar/{id}/delete', 'Admin\ScholarController@delete');
     Route::get('scholar/upload', 'Admin\ScholarController@upload');
+    Route::get('scholar/search', 'Admin\ScholarController@search');
 
     Route::post('scholar/import', 'Admin\ScholarController@import');
     Route::post('scholar', 'Admin\ScholarController@store');

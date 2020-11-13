@@ -3,7 +3,7 @@
     Xóa học giả
 @endsection
 @section('content')
-    <h1> Xóa học giả {{ $cat->id . ' : ' .$cat->name }}</h1>
+    <h1> Xóa học giả {{ $cat->id . ' : ' .$cat->firstname . ' ' .$cat->lastname  }}</h1>
 
     <div class="row">
         <div class="form-three widget-shadow">

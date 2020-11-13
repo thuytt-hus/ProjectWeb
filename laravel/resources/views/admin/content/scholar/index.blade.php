@@ -4,9 +4,23 @@
 @endsection
 @section('content')
     <h1> Quản trị học giả</h1>
-    <div style="margin: 20px 0">
-        <a href="{{ url('admin/scholar/create') }}" class="btn btn-success">Thêm học giả</a>
-        <a href="{{ url('admin/scholar/upload') }}" class="btn btn-success">Upload file excel</a>
+
+    <div style="margin: 20px 0" class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <a href="{{ url('admin/scholar/create') }}" class="btn btn-success">Thêm học giả</a>
+                <a href="{{ url('admin/scholar/upload') }}" class="btn btn-success">Upload file excel</a>
+            </div>
+            <form action="{{ url('admin/scholar/search') }}" method="GET" name="search" id="search"
+                  class="form-horizontal">
+                <div class="col-md-4 col-sm-4">
+                    <input type="text" name="search" placeholder="Search"
+                           aria-label="Search">
+                    <button type="submit" class="btn btn-success">Search</button>
+                </div>
+            </form>
+        </div>
+
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">
@@ -56,7 +70,7 @@
     <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/ProjectWeb/laravel/public/laravel-filemanager'});
+            $('.lfm-btn').filemanager('image', {'prefix': 'http://localhost/ProjectWeb/laravel/public/laravel-filemanager'});
 
         });
 

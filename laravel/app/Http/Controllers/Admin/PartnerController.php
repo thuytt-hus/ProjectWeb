@@ -133,4 +133,9 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
+    public function countScholar()
+    {
+        $countPartner = PartnerModel::count();
+        return view('admin.dashboard', compact($countPartner));
+    }
 }

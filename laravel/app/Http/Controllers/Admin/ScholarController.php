@@ -16,7 +16,8 @@ class ScholarController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index() {
+    public function index()
+    {
 
         $items = DB::table('scholar')->paginate(10);
 
@@ -29,7 +30,8 @@ class ScholarController extends Controller
         return view('admin.content.scholar.index', $data);
     }
 
-    public function create() {
+    public function create()
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -38,7 +40,8 @@ class ScholarController extends Controller
         return view('admin.content.scholar.submit', $data);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $validatedData = $request->validate([
             'referralunit' => 'required',
@@ -70,7 +73,8 @@ class ScholarController extends Controller
         return redirect('/admin/scholar');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -82,7 +86,8 @@ class ScholarController extends Controller
         return view('admin.content.scholar.edit', $data);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
 
         $validatedData = $request->validate([
             'referralunit' => 'required',
@@ -115,7 +120,8 @@ class ScholarController extends Controller
         return redirect('/admin/scholar');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -127,7 +133,8 @@ class ScholarController extends Controller
         return view('admin.content.scholar.delete', $data);
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $item = ScholarModel::find($id);
 
         $item->delete();
@@ -135,7 +142,8 @@ class ScholarController extends Controller
         return redirect('/admin/scholar');
     }
 
-    public function upload(){
+    public function upload()
+    {
         return view('admin.content.scholar.upload');
     }
 
@@ -148,4 +156,20 @@ class ScholarController extends Controller
         $import = Excel::import(new ScholarImport(), request()->file('select_file'));
         return redirect('/admin/scholar');
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('search');
+        $scholar = ScholarModel::SearchByKeyword($keyword, true)->paginate(10);
+        $data = array();
+        $data['cats'] = $scholar;
+        return view('admin.content.scholar.index', $data);
+    }
+
+    public function countScholar()
+    {
+        $items = ScholarModel::all();
+        return view('admin.dashboard', compact($items));
+    }
+
 }
