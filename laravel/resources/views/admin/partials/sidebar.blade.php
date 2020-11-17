@@ -43,7 +43,19 @@
 
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
+                            <i class="fa fa-envelope"></i>
+                            <span>Email</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ url('admin/sendmail/partner') }}"><i class="fa fa-angle-right"></i> Nhà tuyển dụng</a></li>
+                            <li><a href="{{ url('admin/sendmail/scholar') }}"><i class="fa fa-angle-right"></i> Học giả</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-group"></i>
                             <span>Quản trị viên</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>

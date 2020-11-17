@@ -5,7 +5,7 @@
 @section('content')
     <h1> Quản trị học giả</h1>
 
-    <div style="margin: 20px 0" class="container">
+    <div style="margin: 20px 0">
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <a href="{{ url('admin/scholar/create') }}" class="btn btn-success">Thêm học giả</a>

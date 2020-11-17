@@ -24,7 +24,7 @@
                 <div class="col-sm-offset-2">
                     <input type="file" name="select_file" accept=".xlsx, .xls, .csv"/>
                     <br><br>
-                    <button type="submit" class="btn btn-danger">Upload</button>
+                    <button type="submit" class="btn btn-success">Upload</button>
                 </div>
             </form>
         </div>

@@ -44,6 +44,7 @@ Route::prefix('admin')->group(function () {
     Route::get('partner/create', 'Admin\PartnerController@create');
     Route::get('partner/{id}/edit', 'Admin\PartnerController@edit');
     Route::get('partner/{id}/delete', 'Admin\PartnerController@delete');
+    Route::get('partner/search', 'Admin\PartnerController@search');
 
     Route::post('partner', 'Admin\PartnerController@store');
     Route::post('partner/{id}', 'Admin\PartnerController@update');
@@ -70,4 +71,10 @@ Route::prefix('admin')->group(function () {
     Route::post('users', 'Admin\AdminManagerController@store');
     Route::post('users/{id}', 'Admin\AdminManagerController@update');
     Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');
+
+    Route::get('sendmail/partner', 'Admin\PartnerMailController@index');
+    Route::get('sendmail/partner/send', 'Admin\PartnerMailController@send');
+    Route::post('sendmail/partner/send/email', 'Admin\PartnerMailController@sendemail');
+
+    Route::get('sendmail/scholar', 'Admin\ScholarMailController@index');
 });

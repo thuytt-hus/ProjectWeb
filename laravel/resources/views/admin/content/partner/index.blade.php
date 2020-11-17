@@ -5,7 +5,18 @@
 @section('content')
     <h1> Quản trị nhà tuyển dụng</h1>
     <div style="margin: 20px 0">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
         <a href="{{ url('admin/partner/create') }}" class="btn btn-success">Thêm nhà tuyển dụng</a>
+            </div>
+            <form action="{{ url('admin/partner/search') }}" method="GET" name="search" id="search"
+                  class="form-horizontal">
+                <div class="col-md-4 col-sm-4">
+                    <input type="text" name="search" placeholder="Search"
+                           aria-label="Search">
+                    <button type="submit" class="btn btn-success">Search</button>
+                </div>
+            </form>
     </div>
     <div class="tables">
         <div class="table-responsive bs-example widget-shadow">

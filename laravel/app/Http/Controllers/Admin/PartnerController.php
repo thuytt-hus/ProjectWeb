@@ -133,6 +133,15 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('search');
+        $partner = PartnerModel::SearchByKeyword($keyword, true)->paginate(10);
+        $data = array();
+        $data['cats'] = $partner;
+        return view('admin.content.partner.index', $data);
+    }
+
     public function countScholar()
     {
         $countPartner = PartnerModel::count();
