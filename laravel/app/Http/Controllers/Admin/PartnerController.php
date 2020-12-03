@@ -144,7 +144,8 @@ class PartnerController extends Controller
 
     public function countScholar()
     {
-        $countPartner = PartnerModel::count();
+        $countPartner = DB::table('partner')->count();
+        //PartnerModel::count();
         return view('admin.dashboard', compact($countPartner));
     }
 }
