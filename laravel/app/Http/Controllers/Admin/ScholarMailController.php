@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Mail\SendMail;
-use App\Model\Admin\EmailModel;
 use App\Model\Admin\EmailScholarModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

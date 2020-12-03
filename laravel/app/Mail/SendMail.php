@@ -35,7 +35,7 @@ class SendMail extends Mailable
     {
         $e_subject = $this->sub;
         $e_message = $this->mes;
-        return $this->view('admin.content.email.partner.contentemail', compact("e_message"))->subject($e_subject);
+        return $this->view('admin.content.email.contentemail', compact("e_message"))->subject($e_subject);
         //return redirect('/admin/content/email/partner/index');
     }
 }

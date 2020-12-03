@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-sm-11 col-centered">
                 <div class="panel panel-default">
-                    <form action="{{ url('admin/sendmail/partner/send/email') }}" method="POST">
+                    <form action="{{ url('admin/sendmail/scholar/send/email') }}" method="POST">
                         @csrf
                         <div class="panel-body">
                             <div class="form-group">

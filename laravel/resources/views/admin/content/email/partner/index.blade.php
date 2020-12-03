@@ -10,7 +10,6 @@
             @csrf
             <div style="margin: 10px 0">
                 <button type="submit" class="btn btn-success"> Gửi mail</button>
-                {{--<a href="{{ url('admin/sendmail/partner/send') }}" class="btn btn-success">Gửi email</a>--}}
             </div>
             <div class="col-md-4 compose-left">
                 <div class="folder widget-shadow">
