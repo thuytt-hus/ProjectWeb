@@ -36,9 +36,13 @@ class ScholarMailController extends Controller
     public function store(Request $request)
     {
         $items = $request->partner;
-        $data = array();
-        $data['cats'] = $items;
-        return view('admin.content.email.scholar.send', $data);
+        if (isset($items)) {
+            $data = array();
+            $data['cats'] = $items;
+            return view('admin.content.email.scholar.send', $data);
+        } else {
+            return redirect('/admin/sendmail/scholar');
+        }
     }
 
     public function sendemail(Request $request)

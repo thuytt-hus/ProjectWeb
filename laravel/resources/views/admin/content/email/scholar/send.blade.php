@@ -1,6 +1,6 @@
 @extends('admin.layouts.glance')
 @section('title')
-    Gửi mail cho nhà tuyển dụng
+    Gửi mail cho học giả
 @endsection
 @section('content')
     <div class="container">

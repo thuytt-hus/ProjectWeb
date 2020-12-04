@@ -39,13 +39,15 @@
                     Email
                 </div>
                 <div class="inbox-page row">
-                    <div class="inbox-row widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
-                        @foreach($emails as $email)
+                    @foreach($emails as $email)
+                        <div class="inbox-row widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
+
                             <div class="mail mail-name"><h6>{{$email->subject}}</h6></div>
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$email->id}}"
                                aria-expanded="true" aria-controls="collapseOne">
                                 <div class="mail"><p>{{$email->email}}</p></div>
                             </a>
+
                             <div class="mail-right dots_drop">
                                 <div class="dropdown">
                                     <a href="#" data-toggle="dropdown" aria-expanded="false">
@@ -77,14 +79,15 @@
                             <div class="mail-right"><p>{{Carbon\Carbon::parse($email->created_at)->format('d M y')}}</p>
                             </div>
                             <div class="clearfix"></div>
-                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                            <div id="collapse{{$email->id}}" class="panel-collapse collapse" role="tabpanel"
                                  aria-labelledby="headingOne">
                                 <div class="mail-body">
                                     <p>{{$email->message}}</p>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+
+                        </div>
+                    @endforeach
                 </div>
 
             </div>

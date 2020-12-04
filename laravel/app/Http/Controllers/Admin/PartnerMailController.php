@@ -37,9 +37,13 @@ class PartnerMailController extends Controller
     public function store(Request $request)
     {
         $items = $request->partner;
-        $data = array();
-        $data['cats'] = $items;
-        return view('admin.content.email.partner.send', $data);
+        if (isset($items)) {
+            $data = array();
+            $data['cats'] = $items;
+            return view('admin.content.email.partner.send', $data);
+        } else {
+            return redirect('/admin/sendmail/partner');
+        }
     }
 
     public function sendemail(Request $request)
