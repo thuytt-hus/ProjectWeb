@@ -166,10 +166,5 @@ class ScholarController extends Controller
         return view('admin.content.scholar.index', $data);
     }
 
-    public function countScholar()
-    {
-        $items = ScholarModel::all();
-        return view('admin.dashboard', compact($items));
-    }
 
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Admin\PartnerModel;
+use App\Model\Admin\ScholarModel;
 use App\Model\AdminModel;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,14 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('admin.dashboard');
+        $countPartner = PartnerModel::count();
+        $data1 = array();
+        $data1['countpartner'] = $countPartner;
+
+        $countScholar = ScholarModel::count();
+        $data2 = array();
+        $data2['countscholar'] = $countScholar;
+        return view('admin.dashboard', $data1, $data2);
     }
 
     public function create(){

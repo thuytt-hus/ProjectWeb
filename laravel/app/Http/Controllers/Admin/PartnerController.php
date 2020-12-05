@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Imports\PartnerImport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\PartnerModel;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PartnerController extends Controller
 {
@@ -133,6 +135,21 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
+    public function upload()
+    {
+        return view('admin.content.partner.upload');
+    }
+
+    public function import(Request $request)
+    {
+        $validatedData = $request->validate([
+            'select_file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+
+        $import = Excel::import(new PartnerImport(), request()->file('select_file'));
+        return redirect('/admin/partner');
+    }
+
     public function search(Request $request)
     {
         $keyword = $request->input('search');
@@ -140,12 +157,5 @@ class PartnerController extends Controller
         $data = array();
         $data['cats'] = $partner;
         return view('admin.content.partner.index', $data);
-    }
-
-    public function countScholar()
-    {
-        $countPartner = DB::table('partner')->count();
-        //PartnerModel::count();
-        return view('admin.dashboard', compact($countPartner));
     }
 }

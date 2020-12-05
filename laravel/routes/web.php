@@ -45,7 +45,9 @@ Route::prefix('admin')->group(function () {
     Route::get('partner/{id}/edit', 'Admin\PartnerController@edit');
     Route::get('partner/{id}/delete', 'Admin\PartnerController@delete');
     Route::get('partner/search', 'Admin\PartnerController@search');
+    Route::get('partner/upload', 'Admin\PartnerController@upload');
 
+    Route::post('partner/import', 'Admin\PartnerController@import');
     Route::post('partner', 'Admin\PartnerController@store');
     Route::post('partner/{id}', 'Admin\PartnerController@update');
     Route::post('partner/{id}/delete', 'Admin\PartnerController@destroy');

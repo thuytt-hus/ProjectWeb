@@ -8,8 +8,8 @@
             <div class="r3_counter_box">
                 <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                 <div class="stats">
-                    <h5><strong>{{isset($countPartner) ? $countPartner : '12'}}</strong></h5>
-                    <span>Nhà tuyển dụng</span>
+                        <h5><strong>{{isset($countpartner) ? $countpartner : '12'}}</strong></h5>
+                        <span>Nhà tuyển dụng</span>
                 </div>
             </div>
         </div>
@@ -17,12 +17,12 @@
             <div class="r3_counter_box">
                 <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                 <div class="stats">
-                    <h5><strong>{{isset($cats) ? count($cats) : '12'}}</strong></h5>
+                    <h5><strong>{{isset($countscholar) ? $countscholar : '12'}}</strong></h5>
                     <span>Học giả</span>
                 </div>
             </div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
 
     <div class="row-one widgettable">
@@ -44,9 +44,10 @@
                     <label>1283+</label>
                 </div>
                 <div class="col-md-6 top-content1">
-                    <div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
+                    <div id="demo-pie-1" class="pie-title-center" data-percent="45"><span class="pie-value"></span>
+                    </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
             <div class="content-top-1">
                 <div class="col-md-6 top-content">
@@ -54,9 +55,10 @@
                     <label>2262+</label>
                 </div>
                 <div class="col-md-6 top-content1">
-                    <div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span> </div>
+                    <div id="demo-pie-2" class="pie-title-center" data-percent="75"><span class="pie-value"></span>
+                    </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
             <div class="content-top-1">
                 <div class="col-md-6 top-content">
@@ -64,9 +66,10 @@
                     <label>12589+</label>
                 </div>
                 <div class="col-md-6 top-content1">
-                    <div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
+                    <div id="demo-pie-3" class="pie-title-center" data-percent="90"><span class="pie-value"></span>
+                    </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
         </div>
         <div class="col-md-2 stat">
@@ -75,8 +78,10 @@
                     <a href="#"><i class="fa fa-facebook"></i></a>
                 </div>
                 <ul class="info">
-                    <li class="col-md-6"><b>1,296</b><p>Friends</p></li>
-                    <li class="col-md-6"><b>647</b><p>Likes</p></li>
+                    <li class="col-md-6"><b>1,296</b>
+                        <p>Friends</p></li>
+                    <li class="col-md-6"><b>647</b>
+                        <p>Likes</p></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -85,8 +90,10 @@
                     <a href="#"><i class="fa fa-twitter"></i></a>
                 </div>
                 <ul class="info">
-                    <li class="col-md-6"><b>1,997</b><p>Followers</p></li>
-                    <li class="col-md-6"><b>389</b><p>Tweets</p></li>
+                    <li class="col-md-6"><b>1,997</b>
+                        <p>Followers</p></li>
+                    <li class="col-md-6"><b>389</b>
+                        <p>Tweets</p></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -95,13 +102,15 @@
                     <a href="#"><i class="fa fa-google-plus"></i></a>
                 </div>
                 <ul class="info">
-                    <li class="col-md-6"><b>1,216</b><p>Followers</p></li>
-                    <li class="col-md-6"><b>321</b><p>shares</p></li>
+                    <li class="col-md-6"><b>1,216</b>
+                        <p>Followers</p></li>
+                    <li class="col-md-6"><b>321</b>
+                        <p>shares</p></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
         </div>
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
 
 
