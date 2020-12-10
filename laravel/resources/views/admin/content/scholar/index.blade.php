@@ -4,19 +4,29 @@
 @endsection
 @section('content')
     <h1> Quản trị học giả</h1>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <strong>{{ $error }}</strong><br>
+            @endforeach
+        </div>
+    @endif
     <div style="margin: 20px 0">
         <div class="row">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-9 col-sm-9">
                 <a href="{{ url('admin/scholar/create') }}" class="btn btn-success">Thêm học giả</a>
-                <a href="{{ url('admin/scholar/upload') }}" class="btn btn-success">Upload file excel</a>
+                <a href="{{ url('admin/scholar/upload') }}" class="btn btn-success">Import</a>
             </div>
             <form action="{{ url('admin/scholar/search') }}" method="GET" name="search" id="search"
                   class="form-horizontal">
-                <div class="col-md-4 col-sm-4">
-                    <input type="text" name="search" placeholder="Search"
-                           aria-label="Search">
-                    <button type="submit" class="btn btn-success">Search</button>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" name="search" placeholder="Search"
+                                   aria-label="Search">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

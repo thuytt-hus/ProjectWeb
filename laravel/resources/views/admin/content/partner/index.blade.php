@@ -4,18 +4,29 @@
 @endsection
 @section('content')
     <h1> Quản trị nhà tuyển dụng</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <strong>{{ $error }}</strong><br>
+            @endforeach
+        </div>
+    @endif
     <div style="margin: 20px 0">
         <div class="row">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-9 col-sm-9">
                 <a href="{{ url('admin/partner/create') }}" class="btn btn-success">Thêm nhà tuyển dụng</a>
-                <a href="{{ url('admin/partner/upload') }}" class="btn btn-success">Upload file excel</a>
+                <a href="{{ url('admin/partner/upload') }}" class="btn btn-success">Import</a>
             </div>
             <form action="{{ url('admin/partner/search') }}" method="GET" name="search" id="search"
                   class="form-horizontal">
-                <div class="col-md-4 col-sm-4">
-                    <input type="text" name="search" placeholder="Search"
-                           aria-label="Search">
-                    <button type="submit" class="btn btn-success">Search</button>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" name="search" placeholder="Search"
+                                   aria-label="Search">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -65,13 +76,6 @@
             </div>
         </div>
 
-        <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.lfm-btn').filemanager('image', {'prefix': 'http://localhost/ProjectWeb/laravel/public/laravel-filemanager'});
 
-            });
-
-        </script>
 
 @endsection

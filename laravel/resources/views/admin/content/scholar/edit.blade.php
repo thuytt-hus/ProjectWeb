@@ -10,11 +10,9 @@
 
             @if ($errors->any())
                 <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                    @foreach ($errors->all() as $error)
+                        <strong>{{ $error }}</strong><br>
+                    @endforeach
                 </div>
             @endif
 
@@ -93,7 +91,7 @@
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Điện thoại</label>
                     <div class="col-sm-8">
-                        <input type="text" name="phone" class="form-control1" id="focusedinput"
+                        <input type="tel" name="phone" class="form-control1" id="focusedinput" pattern="09|03|07|08|05)+([0-9]{8}"
                                value="{{ $cat->phone }}"
                                placeholder="Default Input">
                     </div>

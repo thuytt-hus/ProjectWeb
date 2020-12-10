@@ -123,7 +123,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
             // https://unisharp.github.io/laravel-filemanager/integration
             var editor_config = {
-                path_absolute : "http://localhost/lar.tuto/authen/public/",
+                path_absolute : "http://localhost:8080/ProjectWeb/laravel/public/",
                 selector: "textarea.mytinymce",
                 plugins: [
                     "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -131,7 +131,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                     "insertdatetime media nonbreaking save table contextmenu directionality",
                     "emoticons template paste textcolor colorpicker textpattern"
                 ],
-                height: 500,
+                height: 300,
                 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
                 relative_urls: false,
                 file_browser_callback : function(field_name, url, type, win) {

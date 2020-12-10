@@ -4,7 +4,13 @@
 @endsection
 @section('content')
     <h1> Quản trị email</h1>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <strong>{{ $error }}</strong><br>
+            @endforeach
+        </div>
+    @endif
     <div class="main-page">
         <form method="post" action="{{ url('admin/sendmail/partner/send')}}">
             @csrf
@@ -14,7 +20,15 @@
             <div class="col-md-4 compose-left">
                 <div class="folder widget-shadow">
                     <ul>
-                        <li class="head"><i class="fa fa-user" aria-hidden="true"></i>Nhà tuyển dụng</li>
+                        <li class="head">
+                            <i class="fa fa-user" aria-hidden="true"></i>Nhà tuyển dụng
+                            <div style="float: right">
+                                <label for="cc"
+                                       style="font-weight: normal;font-size: 16px;font-family: sans-serif;">All</label>
+                                <input type="checkbox" id="cc" onclick="javascript:checkAll(this)"/>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
                         <li><a href="#">
                                 @foreach($cats as $cat)
                                     <div class="chat-left">
@@ -43,7 +57,8 @@
                         <div class="inbox-row widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
 
                             <div class="mail mail-name"><h6>{{$email->subject}}</h6></div>
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$email->id}}"
+                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse{{$email->id}}"
                                aria-expanded="true" aria-controls="collapseOne">
                                 <div class="mail"><p>{{$email->email}}</p></div>
                             </a>
@@ -94,4 +109,16 @@
         </div>
         <div class="clearfix"></div>
     </div>
+    <script language="javascript">
+        function checkAll(o) {
+            var boxes = document.getElementsByName('partner[]');
+            for (var x = 0; x < boxes.length; x++) {
+                var obj = boxes[x];
+                if (obj.type == "checkbox") {
+                    if (obj.name != "check")
+                        obj.checked = o.checked;
+                }
+            }
+        }
+    </script>
 @endsection

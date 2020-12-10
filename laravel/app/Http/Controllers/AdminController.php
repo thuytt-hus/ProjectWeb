@@ -6,6 +6,7 @@ use App\Model\Admin\PartnerModel;
 use App\Model\Admin\ScholarModel;
 use App\Model\AdminModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -22,7 +23,32 @@ class AdminController extends Controller
         $countScholar = ScholarModel::count();
         $data2 = array();
         $data2['countscholar'] = $countScholar;
-        return view('admin.dashboard', $data1, $data2);
+
+        $data3 = DB::table('partner')
+            ->select(
+                DB::raw('referralunit as referralunit'),
+                DB::raw('count(*) as number'))
+            ->groupBy('referralunit')
+            ->get();
+        $array1[] = ['Referralunit', 'Number'];
+        foreach($data3 as $key => $value)
+        {
+            $array1[++$key] = [$value->referralunit, $value->number];
+        }
+
+        $data4 = DB::table('scholar')
+            ->select(
+                DB::raw('referralunit as referralunit'),
+                DB::raw('count(*) as number'))
+            ->groupBy('referralunit')
+            ->get();
+        $array2[] = ['Referralunit', 'Number'];
+        foreach($data4 as $key => $value)
+        {
+            $array2[++$key] = [$value->referralunit, $value->number];
+        }
+
+        return view('admin.dashboard', $data1, $data2)->with('partner', json_encode($array1))->with('scholar', json_encode($array2));
     }
 
     public function create(){

@@ -19,11 +19,13 @@ class SendMail extends Mailable
 
     public $sub;
     public $mes;
+    public $data;
 
-    public function __construct($subject, $message)
+    public function __construct($subject, $message, $data = [])
     {
         $this->sub = $subject;
         $this->mes = $message;
+        $this->data = $data;
     }
 
     /**
@@ -35,7 +37,14 @@ class SendMail extends Mailable
     {
         $e_subject = $this->sub;
         $e_message = $this->mes;
-        return $this->view('admin.content.email.contentemail', compact("e_message"))->subject($e_subject);
-        //return redirect('/admin/content/email/partner/index');
+        $e_data = $this->data;
+        $email = $this->view('admin.content.email.contentemail', compact("e_message"))->subject($e_subject);
+        if (!empty($e_data)) {
+            foreach ($e_data as $data) {
+                $email->attach($data['file'], $data['options']);
+            }
+        }
+
+        return $email;
     }
 }

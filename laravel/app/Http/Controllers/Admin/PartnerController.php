@@ -16,7 +16,8 @@ class PartnerController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index() {
+    public function index()
+    {
 
         $items = DB::table('partner')->paginate(10);
 
@@ -29,7 +30,8 @@ class PartnerController extends Controller
         return view('admin.content.partner.index', $data);
     }
 
-    public function create() {
+    public function create()
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -38,7 +40,8 @@ class PartnerController extends Controller
         return view('admin.content.partner.submit', $data);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $validatedData = $request->validate([
             'referralunit' => 'required',
@@ -48,8 +51,22 @@ class PartnerController extends Controller
             'department' => 'required',
             'company_name' => 'required',
             'country' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'email' => 'required|email',
+            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+        ], [
+            'required' => ':attribute bắt buộc nhập.',
+            'email' => ':attribute chưa đúng định dạng',
+            'regex' => ':attribute chưa đúng định dạng'
+        ], [
+            'referralunit' => 'Đơn vị giới thiệu',
+            'firstname' => 'Tên',
+            'lastname' => 'Họ đệm',
+            'position' => 'Chức vụ',
+            'faculty' => 'Khoa',
+            'college' => 'Đơn vị giáo dục',
+            'country' => 'Quốc gia',
+            'email' => 'Email',
+            'phone' => 'Điện thoại'
         ]);
 
         $input = $request->all();
@@ -70,7 +87,8 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -82,7 +100,8 @@ class PartnerController extends Controller
         return view('admin.content.partner.edit', $data);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
 
         $validatedData = $request->validate([
             'referralunit' => 'required',
@@ -92,8 +111,22 @@ class PartnerController extends Controller
             'department' => 'required',
             'company_name' => 'required',
             'country' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'email' => 'required|email',
+            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+        ], [
+            'required' => ':attribute bắt buộc nhập.',
+            'email' => ':attribute chưa đúng định dạng',
+            'regex' => ':attribute chưa đúng định dạng'
+        ], [
+            'referralunit' => 'Đơn vị giới thiệu',
+            'firstname' => 'Tên',
+            'lastname' => 'Họ đệm',
+            'position' => 'Chức vụ',
+            'faculty' => 'Khoa',
+            'college' => 'Đơn vị giáo dục',
+            'country' => 'Quốc gia',
+            'email' => 'Email',
+            'phone' => 'Điện thoại'
         ]);
 
         $input = $request->all();
@@ -115,7 +148,8 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -127,7 +161,8 @@ class PartnerController extends Controller
         return view('admin.content.partner.delete', $data);
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $item = PartnerModel::find($id);
 
         $item->delete();

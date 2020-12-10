@@ -51,8 +51,22 @@ class ScholarController extends Controller
             'faculty' => 'required',
             'college' => 'required',
             'country' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'email' => 'required|email',
+            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+        ], [
+            'required' => ':attribute bắt buộc nhập.',
+            'email' => ':attribute chưa đúng định dạng',
+            'regex' => ':attribute chưa đúng định dạng'
+        ], [
+            'referralunit' => 'Đơn vị giới thiệu',
+            'firstname' => 'Tên',
+            'lastname' => 'Họ đệm',
+            'position' => 'Chức vụ',
+            'faculty' => 'Khoa',
+            'college' => 'Đơn vị giáo dục',
+            'country' => 'Quốc gia',
+            'email' => 'Email',
+            'phone' => 'Điện thoại'
         ]);
 
         $input = $request->all();
@@ -97,8 +111,22 @@ class ScholarController extends Controller
             'faculty' => 'required',
             'college' => 'required',
             'country' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'email' => 'required|email',
+            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+        ], [
+            'required' => ':attribute bắt buộc nhập.',
+            'email' => ':attribute chưa đúng định dạng',
+            'regex' => ':attribute chưa đúng định dạng'
+        ], [
+            'referralunit' => 'Đơn vị giới thiệu',
+            'firstname' => 'Tên',
+            'lastname' => 'Họ đệm',
+            'position' => 'Chức vụ',
+            'faculty' => 'Khoa',
+            'college' => 'Đơn vị giáo dục',
+            'country' => 'Quốc gia',
+            'email' => 'Email',
+            'phone' => 'Điện thoại'
         ]);
 
         $input = $request->all();
