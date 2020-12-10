@@ -46,6 +46,7 @@ Route::prefix('admin')->group(function () {
     Route::get('partner/{id}/delete', 'Admin\PartnerController@delete');
     Route::get('partner/search', 'Admin\PartnerController@search');
     Route::get('partner/upload', 'Admin\PartnerController@upload');
+    Route::get('partner/export', 'Admin\PartnerController@export');
 
     Route::post('partner/import', 'Admin\PartnerController@import');
     Route::post('partner', 'Admin\PartnerController@store');
@@ -56,8 +57,9 @@ Route::prefix('admin')->group(function () {
     Route::get('scholar/create', 'Admin\ScholarController@create');
     Route::get('scholar/{id}/edit', 'Admin\ScholarController@edit');
     Route::get('scholar/{id}/delete', 'Admin\ScholarController@delete');
-    Route::get('scholar/upload', 'Admin\ScholarController@upload');
     Route::get('scholar/search', 'Admin\ScholarController@search');
+    Route::get('scholar/upload', 'Admin\ScholarController@upload');
+    Route::get('scholar/export', 'Admin\ScholarController@export');
 
     Route::post('scholar/import', 'Admin\ScholarController@import');
     Route::post('scholar', 'Admin\ScholarController@store');

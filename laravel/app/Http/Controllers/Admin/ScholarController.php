@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ScholarExport;
 use App\Imports\ScholarImport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -185,6 +186,10 @@ class ScholarController extends Controller
         return redirect('/admin/scholar');
     }
 
+    public function export(){
+        return Excel::download(new ScholarExport(), 'hocgia.xlsx');
+
+    }
     public function search(Request $request)
     {
         $keyword = $request->input('search');

@@ -16,6 +16,7 @@
             <div class="col-md-9 col-sm-9">
                 <a href="{{ url('admin/partner/create') }}" class="btn btn-success">Thêm nhà tuyển dụng</a>
                 <a href="{{ url('admin/partner/upload') }}" class="btn btn-success">Import</a>
+                <a href="{{ url('admin/partner/export') }}" class="btn btn-success">Export</a>
             </div>
             <form action="{{ url('admin/partner/search') }}" method="GET" name="search" id="search"
                   class="form-horizontal">

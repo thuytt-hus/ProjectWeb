@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\PartnerExport;
 use App\Imports\PartnerImport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -183,6 +184,11 @@ class PartnerController extends Controller
 
         $import = Excel::import(new PartnerImport(), request()->file('select_file'));
         return redirect('/admin/partner');
+    }
+
+    public function export(){
+        return Excel::download(new PartnerExport(), 'nhatuyendung.xlsx');
+
     }
 
     public function search(Request $request)
