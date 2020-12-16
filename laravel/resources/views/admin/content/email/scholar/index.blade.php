@@ -97,6 +97,7 @@
                                  aria-labelledby="headingOne">
                                 <div class="mail-body">
                                     <p>{{$email->message}}</p>
+                                    <p><a href="{{ url('admin/sendmail/scholar/file/'.$email->id) }}">Hiển thị</a></p>
                                 </div>
                             </div>
                         </div>

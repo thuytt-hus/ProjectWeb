@@ -52,6 +52,14 @@ class PartnerMailController extends Controller
         }
     }
 
+    public function show($id){
+        $data = array();
+
+        $item = EmailPartnerModel::find($id);
+        $data['cat'] = $item;
+        return view('admin.content.email.partner.show', $data);
+    }
+
     public function sendemail(Request $request)
     {
         $validatedData = $request->validate([

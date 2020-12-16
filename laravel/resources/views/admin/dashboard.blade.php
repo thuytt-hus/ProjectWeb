@@ -30,11 +30,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6">
-                <div id="piechart_partner" style="height:350px;"></div>
+                <div id="piechart_partner" style="height:350px;width: 90%;"></div>
 
             </div>
             <div class="col-sm-6 col-md-6">
-                <div id="piechart_scholar" style="height:350px;"></div>
+                <div id="piechart_scholar" style="height:350px;width: 90%;"></div>
             </div>
         </div>
     </div>

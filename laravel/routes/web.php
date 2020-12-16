@@ -77,10 +77,12 @@ Route::prefix('admin')->group(function () {
     Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');
 
     Route::get('sendmail/partner', 'Admin\PartnerMailController@index');
+    Route::get('sendmail/partner/file/{id}', 'Admin\PartnerMailController@show');
     Route::post('sendmail/partner/send', 'Admin\PartnerMailController@store');
     Route::post('sendmail/partner/send/email', 'Admin\PartnerMailController@sendemail');
 
     Route::get('sendmail/scholar', 'Admin\ScholarMailController@index');
+    Route::get('sendmail/scholar/file/{id}', 'Admin\ScholarMailController@show');
     Route::post('sendmail/scholar/send', 'Admin\ScholarMailController@store');
     Route::post('sendmail/scholar/send/email', 'Admin\ScholarMailController@sendemail');
 });

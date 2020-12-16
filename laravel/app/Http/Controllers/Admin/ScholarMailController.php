@@ -44,12 +44,18 @@ class ScholarMailController extends Controller
 
             $data = array();
             $data['cat'] = trim($email);
-            return view('admin.content.email.partner.send', $data);
+            return view('admin.content.email.scholar.send', $data);
         } else {
-            return redirect('/admin/sendmail/partner');
+            return redirect('/admin/sendmail/scholar');
         }
     }
+    public function show($id){
+        $data = array();
 
+        $item = EmailScholarModel::find($id);
+        $data['cat'] = $item;
+        return view('admin.content.email.scholar.show', $data);
+    }
     public function sendemail(Request $request)
     {
         $validatedData = $request->validate([

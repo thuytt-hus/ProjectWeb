@@ -23,7 +23,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="text" name="email" placeholder="Email" class="form-control"
-                                           value="{{ $cat }}" required disabled >
+                                           value="{{ $cat }}" required >
                                 </div>
                             </div>
 
