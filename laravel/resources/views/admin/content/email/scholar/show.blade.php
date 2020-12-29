@@ -32,7 +32,7 @@
                     <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput"
-                               value="{{ $cat->content }}" disabled>
+                               value="{{ $cat->message }}" disabled>
                     </div>
                     <br>
 
@@ -65,7 +65,7 @@
                     <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput"
-                               value="{{ $cat->content }}" disabled>
+                               value="{{ $cat->message }}" disabled>
                     </div>
                     <br>
 

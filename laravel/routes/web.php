@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
     Route::get('partner/search', 'Admin\PartnerController@search');
     Route::get('partner/upload', 'Admin\PartnerController@upload');
     Route::get('partner/export', 'Admin\PartnerController@export');
+    Route::get('partner/statistics', 'Admin\PartnerController@barchar');
 
     Route::post('partner/import', 'Admin\PartnerController@import');
     Route::post('partner', 'Admin\PartnerController@store');
@@ -60,6 +61,7 @@ Route::prefix('admin')->group(function () {
     Route::get('scholar/search', 'Admin\ScholarController@search');
     Route::get('scholar/upload', 'Admin\ScholarController@upload');
     Route::get('scholar/export', 'Admin\ScholarController@export');
+    Route::get('scholar/statistics', 'Admin\ScholarController@barchar');
 
     Route::post('scholar/import', 'Admin\ScholarController@import');
     Route::post('scholar', 'Admin\ScholarController@store');

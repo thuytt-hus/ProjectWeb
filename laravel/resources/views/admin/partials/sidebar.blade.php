@@ -27,6 +27,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ url('/admin/partner') }}"><i class="fa fa-angle-right"></i> Nhà tuyển dụng</a></li>
+                            <li><a href="{{ url('/admin/partner/statistics') }}"><i class="fa fa-angle-right"></i> Thống kê</a></li>
                         </ul>
                     </li>
 
@@ -38,6 +39,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ url('admin/scholar') }}"><i class="fa fa-angle-right"></i> Học giả</a></li>
+                            <li><a href="{{ url('admin/scholar/statistics') }}"><i class="fa fa-angle-right"></i> Thống kê</a></li>
                         </ul>
                     </li>
 

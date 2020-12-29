@@ -199,5 +199,32 @@ class ScholarController extends Controller
         return view('admin.content.scholar.index', $data);
     }
 
+    public function barchar()
+    {
+        $data1 = DB::table('scholar')
+            ->select(
+                DB::raw('college as college'),
+                DB::raw('count(*) as number'))
+            ->groupBy('college')
+            ->get();
+        $array1[] = ['Đơn vị giáo dục', 'Số lượng'];
+        foreach ($data1 as $key => $value) {
+            $array1[++$key] = [$value->college, $value->number];
+        }
 
+        $data2 = DB::table('scholar')
+            ->select(
+                DB::raw('month(created_at) as year'),
+                DB::raw("COUNT(*) as count"))
+            ->groupBy(DB::raw("month(created_at)"))
+            ->get();
+        $array2[] = ['Năm', 'Số lượng'];
+        foreach ($data2 as $key => $value) {
+            $array2[++$key] = [$value->year, $value->count];
+        }
+        return view('admin.content.scholar.char', $data1, compact($data2))
+            ->with('partner', json_encode($array1))
+            ->with('user', json_encode($array2));
+
+    }
 }

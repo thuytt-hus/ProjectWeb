@@ -52,7 +52,8 @@ class PartnerMailController extends Controller
         }
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $data = array();
 
         $item = EmailPartnerModel::find($id);
@@ -98,8 +99,8 @@ class PartnerMailController extends Controller
             }
         }
         $recipients = explode('  ', $email);
-        foreach ($recipients as $recipient){
-            if(!empty($recipient)){
+        foreach ($recipients as $recipient) {
+            if (!empty($recipient)) {
                 Mail::to($recipient)->send(new SendMail($subject, $message, $data));
             }
         }
@@ -111,12 +112,14 @@ class PartnerMailController extends Controller
         $item->message = $message;
 
         $directory = 'uploads/';
+
         if (!empty($documents)) {
             foreach ($documents as $document) {
                 $name = $document->getClientOriginalName();
                 $document->move($directory, $name);
-                $item->document = $directory . $name;
+                $item->document = $name;
                 $item->save();
+
             }
         };
         $item->save();

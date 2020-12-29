@@ -13,7 +13,6 @@
             @if (isset($cat->document))
                 <div class="col-md-4">
                     <label for="focusedinput" class="col-sm-6 control-label">Người nhận</label>
-                    <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput"
                                value="{{ $cat->email }}" disabled>
@@ -21,7 +20,6 @@
                     <br>
 
                     <label for="focusedinput" class="col-sm-6 control-label">Tiêu đề</label>
-                    <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput""
                         value="{{ $cat->subject }}" disabled>
@@ -29,10 +27,9 @@
                     <br>
 
                     <label for="focusedinput" class="col-sm-6 control-label">Nội dung</label>
-                    <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput"
-                               value="{{ $cat->content }}" disabled>
+                               value="{{ $cat->message }}" disabled>
                     </div>
                     <br>
 
@@ -40,11 +37,13 @@
                 <div class="col-md-8">
                     <iframe src="{{url($cat->document)}}"
                             style="height: 450px; width: 90%"></iframe>
-
-
+                    {{--@foreach($cat->document as $doc)
+                        <iframe src="{{url($doc)}}"
+                                style="height: 450px; width: 90%"></iframe>
+                    @endforeach--}}
                 </div>
             @else
-                <div class="col-md-6 col-sm-6" >
+                <div class="col-md-6 col-sm-6">
                     <label for="focusedinput" class="col-sm-6 control-label">Người nhận</label>
                     <br>
                     <div class="col-md-12 col-sm-12">
@@ -56,8 +55,8 @@
                     <label for="focusedinput" class="col-sm-6 control-label">Tiêu đề</label>
                     <br>
                     <div class="col-md-12 col-sm-12">
-                        <input type="text" name="phone" class="form-control1" id="focusedinput""
-                        value="{{ $cat->subject }}" disabled>
+                        <input type="text" name="phone" class="form-control1" id="focusedinput"
+                               value="{{ $cat->subject }}" disabled>
                     </div>
                     <br>
 
@@ -65,7 +64,7 @@
                     <br>
                     <div class="col-md-12 col-sm-12">
                         <input type="text" name="phone" class="form-control1" id="focusedinput"
-                               value="{{ $cat->content }}" disabled>
+                               value="{{ $cat->message }}">
                     </div>
                     <br>
 

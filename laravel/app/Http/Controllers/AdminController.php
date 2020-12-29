@@ -48,7 +48,9 @@ class AdminController extends Controller
             $array2[++$key] = [$value->referralunit, $value->number];
         }
 
-        return view('admin.dashboard', $data1, $data2)->with('partner', json_encode($array1))->with('scholar', json_encode($array2));
+        return view('admin.dashboard', $data1, $data2)
+            ->with('partner', json_encode($array1))
+            ->with('scholar', json_encode($array2));
     }
 
     public function create(){

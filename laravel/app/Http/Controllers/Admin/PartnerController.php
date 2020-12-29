@@ -53,7 +53,7 @@ class PartnerController extends Controller
             'company_name' => 'required',
             'country' => 'required',
             'email' => 'required|email',
-            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+            'phone' => ['required', 'regex:/(09|03|07|08|05)([0-9]{8})/'],
         ], [
             'required' => ':attribute bắt buộc nhập.',
             'email' => ':attribute chưa đúng định dạng',
@@ -63,8 +63,8 @@ class PartnerController extends Controller
             'firstname' => 'Tên',
             'lastname' => 'Họ đệm',
             'position' => 'Chức vụ',
-            'faculty' => 'Khoa',
-            'college' => 'Đơn vị giáo dục',
+            'department' => 'Lĩnh vực công tác',
+            'company_name' => 'Tên công ty',
             'country' => 'Quốc gia',
             'email' => 'Email',
             'phone' => 'Điện thoại'
@@ -113,7 +113,7 @@ class PartnerController extends Controller
             'company_name' => 'required',
             'country' => 'required',
             'email' => 'required|email',
-            'phone' => ['required','regex:/(09|03|07|08|05)([0-9]{8})/'],
+            'phone' => ['required', 'regex:/(09|03|07|08|05)([0-9]{8})/'],
         ], [
             'required' => ':attribute bắt buộc nhập.',
             'email' => ':attribute chưa đúng định dạng',
@@ -123,8 +123,8 @@ class PartnerController extends Controller
             'firstname' => 'Tên',
             'lastname' => 'Họ đệm',
             'position' => 'Chức vụ',
-            'faculty' => 'Khoa',
-            'college' => 'Đơn vị giáo dục',
+            'department' => 'Lĩnh vực công tác',
+            'company_name' => 'Tên công ty',
             'country' => 'Quốc gia',
             'email' => 'Email',
             'phone' => 'Điện thoại'
@@ -186,7 +186,8 @@ class PartnerController extends Controller
         return redirect('/admin/partner');
     }
 
-    public function export(){
+    public function export()
+    {
         return Excel::download(new PartnerExport(), 'nhatuyendung.xlsx');
 
     }
@@ -198,5 +199,34 @@ class PartnerController extends Controller
         $data = array();
         $data['cats'] = $partner;
         return view('admin.content.partner.index', $data);
+    }
+
+    public function barchar()
+    {
+        $data1 = DB::table('partner')
+            ->select(
+                DB::raw('company_name as company_name'),
+                DB::raw('count(*) as number'))
+            ->groupBy('company_name')
+            ->get();
+        $array1[] = ['Công ty', 'Số lượng'];
+        foreach ($data1 as $key => $value) {
+            $array1[++$key] = [$value->company_name, $value->number];
+        }
+
+        $data2 = DB::table('partner')
+            ->select(
+                DB::raw('month(created_at) as year'),
+                DB::raw("COUNT(*) as count"))
+            ->groupBy(DB::raw("month(created_at)"))
+            ->get();
+        $array2[] = ['Năm', 'Số lượng'];
+        foreach ($data2 as $key => $value) {
+            $array2[++$key] = [$value->year, $value->count];
+        }
+        return view('admin.content.partner.char', $data1, compact($data2))
+            ->with('partner', json_encode($array1))
+            ->with('user', json_encode($array2));
+
     }
 }

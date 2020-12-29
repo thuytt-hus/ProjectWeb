@@ -23,7 +23,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="text" name="email" placeholder="Email" class="form-control"
-                                           value="{{ $cat }}" required >
+                                           value="{{ $cat }}" required>
                                 </div>
                             </div>
 
@@ -58,14 +58,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 
-    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#lfm').filemanager('file', {'prefix': 'http://localhost:8080/ProjectWeb/laravel/public/laravel-filemanager'});
 
-        });
-
-    </script>
 @endsection
